@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Func_DateAdd_Name" xml:space="preserve">
+    <value>计算离当前日期（时间）一定时间间隔的新日期（时间）</value>
+  </data>
+  <data name="Func_DateAdd_Param1" xml:space="preserve">
+    <value>当前日期（时间）</value>
+  </data>
+  <data name="Func_DateAdd_Param2" xml:space="preserve">
+    <value>时间间隔，格式为数字+单位，单位是：Y年M月D日H时m分S秒，如1d2h30m</value>
+  </data>
+  <data name="Func_DateAdd_Param3" xml:space="preserve">
+    <value>是否向前偏移，即在当前日期（时间）之前</value>
+  </data>
+  <data name="Func_DateAdd_Ret" xml:space="preserve">
+    <value>新的日期（时间）</value>
+  </data>
+  <data name="Func_DateFormat_Name" xml:space="preserve">
+    <value>将日期（时间）格式化为指定格式的文本</value>
+  </data>
+  <data name="Func_DateFormat_Param1" xml:space="preserve">
+    <value>目标日期（时间）</value>
+  </data>
+  <data name="Func_DateFormat_Param2" xml:space="preserve">
+    <value>格式，Y年M月D日H时m分S秒，如"yyyyMMdd"</value>
+  </data>
+  <data name="Func_DateFormat_Ret" xml:space="preserve">
+    <value>格式化后的文本</value>
+  </data>
+  <data name="Func_DatePart_Name" xml:space="preserve">
+    <value>获取日期（时间）的一部分</value>
+  </data>
+  <data name="Func_DatePart_Param1" xml:space="preserve">
+    <value>目标日期（时间）</value>
+  </data>
+  <data name="Func_DatePart_Param2" xml:space="preserve">
+    <value>表示部位的文字，Y年M月D日H时m分S秒，只能指定一个，如"Y"</value>
+  </data>
+  <data name="Func_DatePart_Ret" xml:space="preserve">
+    <value>日期部分对应的数值</value>
+  </data>
+  <data name="Func_Match_Name" xml:space="preserve">
+    <value>文本是否匹配指定的正则</value>
+  </data>
+  <data name="Func_Match_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_Match_Param2" xml:space="preserve">
+    <value>匹配的正则</value>
+  </data>
+  <data name="Func_Match_Ret" xml:space="preserve">
+    <value>匹配则返回True，否则返回False</value>
+  </data>
+  <data name="Func_Now_Name" xml:space="preserve">
+    <value>获取当前时间</value>
+  </data>
+  <data name="Func_Now_Param1" xml:space="preserve">
+    <value>时区，默认为+8</value>
+  </data>
+  <data name="Func_Now_Ret" xml:space="preserve">
+    <value>当前时间</value>
+  </data>
+  <data name="Func_Replace_Name" xml:space="preserve">
+    <value>通过正则匹配替换文本中的值</value>
+  </data>
+  <data name="Func_Replace_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_Replace_Param2" xml:space="preserve">
+    <value>匹配的正则</value>
+  </data>
+  <data name="Func_Replace_Param3" xml:space="preserve">
+    <value>要替换的文本</value>
+  </data>
+  <data name="Func_Replace_Ret" xml:space="preserve">
+    <value>替换后的文本</value>
+  </data>
+  <data name="Func_TextLength_Name" xml:space="preserve">
+    <value>获取文本的字符数</value>
+  </data>
+  <data name="Func_TextLength_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_TextLength_Ret" xml:space="preserve">
+    <value>字符数</value>
+  </data>
+  <data name="Func_ToDateExt2_Name" xml:space="preserve">
+    <value>将文本转换为日期（时间），当文本为非标准日期格式，如：“N天前”，“昨天”等时，也会尝试转换为标准时间，以指定的时间作为基准</value>
+  </data>
+  <data name="Func_ToDateExt2_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_ToDateExt2_Param2" xml:space="preserve">
+    <value>基准时间</value>
+  </data>
+  <data name="Func_ToDateExt2_Param3" xml:space="preserve">
+    <value>时区，默认为+8</value>
+  </data>
+  <data name="Func_ToDateExt_Name" xml:space="preserve">
+    <value>将文本转换为日期（时间），当文本为非标准日期格式，如：“N天前”，“昨天”等时，也会尝试转换为标准时间，以当前时间作为基准</value>
+  </data>
+  <data name="Func_ToDateExt_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_ToDateExt_Param2" xml:space="preserve">
+    <value>时区，默认为+8</value>
+  </data>
+  <data name="Func_ToDate_Name" xml:space="preserve">
+    <value>将文本转换为日期（时间）</value>
+  </data>
+  <data name="Func_ToDate_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_ToDate_Param2" xml:space="preserve">
+    <value>时区，默认为+8</value>
+  </data>
+  <data name="Func_ToDate_Ret" xml:space="preserve">
+    <value>转换后的日期（时间）</value>
+  </data>
+  <data name="Func_Today_Name" xml:space="preserve">
+    <value>获取今天的日期（时间）</value>
+  </data>
+  <data name="Func_Today_Param1" xml:space="preserve">
+    <value>时区，默认为+8</value>
+  </data>
+  <data name="Func_Today_Ret" xml:space="preserve">
+    <value>今天的日期，时间为当天零点</value>
+  </data>
+  <data name="Func_ToNumExt_Name" xml:space="preserve">
+    <value>数字转换为文本，文本中含有“千“、”万“、”亿”、“k”的字样时，会转换相应的倍数</value>
+  </data>
+  <data name="Func_ToNumExt_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_ToNumExt_Ret" xml:space="preserve">
+    <value>转换后的数字</value>
+  </data>
+  <data name="Func_ToNum_Name" xml:space="preserve">
+    <value>将文本转换为数字</value>
+  </data>
+  <data name="Func_ToNum_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_ToNum_Ret" xml:space="preserve">
+    <value>转换后的数字</value>
+  </data>
+  <data name="Func_Trim_Name" xml:space="preserve">
+    <value>移除文本两边的空白字符</value>
+  </data>
+  <data name="Func_Trim_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_Trim_Ret" xml:space="preserve">
+    <value>移除空白字符后的新文本</value>
+  </data>
+  <data name="Func_ExtractAll_Name" xml:space="preserve">
+    <value>使用正则匹配文本，并获取所有匹配的文本段</value>
+  </data>
+  <data name="Func_ExtractAll_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_ExtractAll_Param2" xml:space="preserve">
+    <value>匹配的正则</value>
+  </data>
+  <data name="Func_ExtractAll_Ret" xml:space="preserve">
+    <value>所有的匹配字段</value>
+  </data>
+  <data name="Func_Extract_Name" xml:space="preserve">
+    <value>使用正则匹配文本，并获取指定匹配的文本段</value>
+  </data>
+  <data name="Func_Extract_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_Extract_Param2" xml:space="preserve">
+    <value>匹配的正则</value>
+  </data>
+  <data name="Func_Extract_Param3" xml:space="preserve">
+    <value>指定返回第几个匹配</value>
+  </data>
+  <data name="Func_Extract_Ret" xml:space="preserve">
+    <value>指定的匹配字段</value>
+  </data>
+  <data name="Func_IfElse_Name" xml:space="preserve">
+    <value>依据条件表达式的真否，执行相应的结果表达式，并返回结果</value>
+  </data>
+  <data name="Func_IfElse_Param1" xml:space="preserve">
+    <value>条件表达式为真时，执行的结果表达式</value>
+  </data>
+  <data name="Func_IfElse_Param2" xml:space="preserve">
+    <value>条件表达式为假时，执行的结果表达式</value>
+  </data>
+  <data name="Func_IfElse_Ret" xml:space="preserve">
+    <value>结果表达式的返回值</value>
+  </data>
+  <data name="Func_ListLength_Name" xml:space="preserve">
+    <value>获取集合的元素个数</value>
+  </data>
+  <data name="Func_ListLength_Param1" xml:space="preserve">
+    <value>目标集合</value>
+  </data>
+  <data name="Func_ListLength_Ret" xml:space="preserve">
+    <value>元素个数</value>
+  </data>
+  <data name="Func_ToText_Name" xml:space="preserve">
+    <value>将目标数据转换为文本</value>
+  </data>
+  <data name="Func_ToText_Param1" xml:space="preserve">
+    <value>目标数据</value>
+  </data>
+  <data name="Func_ToText_Ret" xml:space="preserve">
+    <value>转换后的文本</value>
+  </data>
+  <data name="Func_ToDateFromUnixTimestamp_Name" xml:space="preserve">
+    <value>将Unix时间戳转换为时间类型数据</value>
+  </data>
+  <data name="Func_ToDateFromUnixTimestamp_Param1" xml:space="preserve">
+    <value>Unix时间戳</value>
+  </data>
+  <data name="Func_ToDateFromUnixTimestamp_Param2" xml:space="preserve">
+    <value>要转换的时间的时区</value>
+  </data>
+  <data name="Func_ToDateFromUnixTimestamp_Ret" xml:space="preserve">
+    <value>转换后的时间</value>
+  </data>
+  <data name="Func_ToUnixTimestamp_Name" xml:space="preserve">
+    <value>将时间类型数据转换为Unix时间戳(10位）</value>
+  </data>
+  <data name="Func_ToUnixTimestamp_Param1" xml:space="preserve">
+    <value>目标时间</value>
+  </data>
+  <data name="Func_ToUnixTimestamp_Ret" xml:space="preserve">
+    <value>转换后的Unix时间戳</value>
+  </data>
+  <data name="Func_IsNullOrEmpty_Name" xml:space="preserve">
+    <value>判断数据是否为未设值或空值，空值包含空字符串，空数组及空对象</value>
+  </data>
+  <data name="Func_IsNullOrEmpty_Param1" xml:space="preserve">
+    <value>目标数据</value>
+  </data>
+  <data name="Func_IsNullOrEmpty_Ret" xml:space="preserve">
+    <value>未设值或空值返回True，否则返回False</value>
+  </data>
+  <data name="Func_IsNull_Name" xml:space="preserve">
+    <value>判断数据是否未设值（NULL）</value>
+  </data>
+  <data name="Func_IsNull_Param1" xml:space="preserve">
+    <value>目标数据</value>
+  </data>
+  <data name="Func_IsNull_Ret" xml:space="preserve">
+    <value>未设值返回True，否则返回False</value>
+  </data>
+  <data name="Func_Join_Name" xml:space="preserve">
+    <value>拼接数组内的多个文本</value>
+  </data>
+  <data name="Func_Join_Param1" xml:space="preserve">
+    <value>目标数组</value>
+  </data>
+  <data name="Func_Join_Param2" xml:space="preserve">
+    <value>分隔字符，若不输入，使用“,”作为默认字符</value>
+  </data>
+  <data name="Func_Join_Ret" xml:space="preserve">
+    <value>拼接后的文本</value>
+  </data>
+  <data name="Func_ToUnixTimestampWithMillisecond_Name" xml:space="preserve">
+    <value>将时间类型数据转换为Unix时间戳(13位带毫秒数）</value>
+  </data>
+  <data name="Func_ToUnixTimestampWithMillisecond_Param1" xml:space="preserve">
+    <value>目标时间</value>
+  </data>
+  <data name="Func_ToUnixTimestampWithMillisecond_Ret" xml:space="preserve">
+    <value>转换后的Unix时间戳</value>
+  </data>
+  <data name="Func_Split_Name" xml:space="preserve">
+    <value>分割文本</value>
+  </data>
+  <data name="Func_Split_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_Split_Param2" xml:space="preserve">
+    <value>分隔符</value>
+  </data>
+  <data name="Func_Split_Ret" xml:space="preserve">
+    <value>分割后的文本集合</value>
+  </data>
+  <data name="Func_JsonToArray_Name" xml:space="preserve">
+    <value>将表示Json数组的文本转换为实际的列表</value>
+  </data>
+  <data name="Func_JsonToArray_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_JsonToArray_Ret" xml:space="preserve">
+    <value>转换后的列表</value>
+  </data>
+  <data name="Func_JsonToObject_Name" xml:space="preserve">
+    <value>将表示Json对象的文本转换为实际的对象</value>
+  </data>
+  <data name="Func_JsonToObject_Param1" xml:space="preserve">
+    <value>目标文本</value>
+  </data>
+  <data name="Func_JsonToObject_Ret" xml:space="preserve">
+    <value>转换后的对象</value>
+  </data>
+</root>

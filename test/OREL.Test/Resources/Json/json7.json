@@ -1,0 +1,132 @@
+﻿{
+  "data": {
+    "poi_dict_info": {},
+    "type": "normal",
+    "title": "",
+    "enabled": true,
+    "extra_info_tip_type": 0,
+    "cover": {
+      "original": "http://ci.xiaohongshu.com/3fdf67bd-9273-5808-b6ba-27cd7304ce69",
+      "width": 1004,
+      "url": "http://ci.xiaohongshu.com/3fdf67bd-9273-5808-b6ba-27cd7304ce69?imageView2/2/w/1080/format/jpg",
+      "height": 1280,
+      "fileid": "3fdf67bd-9273-5808-b6ba-27cd7304ce69"
+    },
+    "geo": "",
+    "fav_count": 1350,
+    "mini_program_info": {
+      "path": "pages/main/note/index?id=5ce3837c000000000f024d7c&type=normal",
+      "thumb": "http://ci.xiaohongshu.com/3fdf67bd-9273-5808-b6ba-27cd7304ce69?imageView2/2/w/540/format/jpg",
+      "user_name": "gh_66c53d495417",
+      "webpage_url": "https://www.xiaohongshu.com/discovery/item/5ce3837c000000000f024d7c",
+      "title": "广州长隆水上乐园攻略 拍照圣地 无敌好玩",
+      "desc": "· 520前夕跟姐妹们计划来了广州长隆水上乐园 开启暴走拍照玩水的一天～刚好赶上万人比基尼的活动，超多国内外小姐姐"
+    },
+    "id": "5ce3837c000000000f024d7c",
+    "images_list": [
+      {
+        "original": "http://ci.xiaohongshu.com/3fdf67bd-9273-5808-b6ba-27cd7304ce69",
+        "width": 1004,
+        "url": "http://ci.xiaohongshu.com/3fdf67bd-9273-5808-b6ba-27cd7304ce69?imageView2/2/w/1080/format/jpg",
+        "height": 1280,
+        "fileid": "3fdf67bd-9273-5808-b6ba-27cd7304ce69",
+        "flag": true
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/df9b8ef7-653a-55bb-b28d-11d941920a71",
+        "width": 972,
+        "url": "http://ci.xiaohongshu.com/df9b8ef7-653a-55bb-b28d-11d941920a71?imageView2/2/w/1080/format/jpg",
+        "height": 1239,
+        "fileid": "df9b8ef7-653a-55bb-b28d-11d941920a71"
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/28c791ed-da02-5dd5-8659-fb004cfc7e73",
+        "width": 960,
+        "url": "http://ci.xiaohongshu.com/28c791ed-da02-5dd5-8659-fb004cfc7e73?imageView2/2/w/1080/format/jpg",
+        "height": 1223,
+        "fileid": "28c791ed-da02-5dd5-8659-fb004cfc7e73"
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/083f80b6-bd66-5eb5-b4cf-6b0d856f01f0",
+        "width": 960,
+        "url": "http://ci.xiaohongshu.com/083f80b6-bd66-5eb5-b4cf-6b0d856f01f0?imageView2/2/w/1080/format/jpg",
+        "height": 1223,
+        "fileid": "083f80b6-bd66-5eb5-b4cf-6b0d856f01f0"
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/09a76735-094f-54c0-bd0f-07506101604d",
+        "width": 960,
+        "url": "http://ci.xiaohongshu.com/09a76735-094f-54c0-bd0f-07506101604d?imageView2/2/w/1080/format/jpg",
+        "height": 1223,
+        "fileid": "09a76735-094f-54c0-bd0f-07506101604d"
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/40614d8c-0bde-5d74-af2c-7c7ae0b90053",
+        "width": 956,
+        "url": "http://ci.xiaohongshu.com/40614d8c-0bde-5d74-af2c-7c7ae0b90053?imageView2/2/w/1080/format/jpg",
+        "height": 1218,
+        "fileid": "40614d8c-0bde-5d74-af2c-7c7ae0b90053"
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/b07bddad-71ad-577d-9a69-922f36f51674",
+        "width": 960,
+        "url": "http://ci.xiaohongshu.com/b07bddad-71ad-577d-9a69-922f36f51674?imageView2/2/w/1080/format/jpg",
+        "height": 1224,
+        "fileid": "b07bddad-71ad-577d-9a69-922f36f51674"
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/97c09319-d5b2-5607-a9aa-d652baff1bb1",
+        "width": 960,
+        "url": "http://ci.xiaohongshu.com/97c09319-d5b2-5607-a9aa-d652baff1bb1?imageView2/2/w/1080/format/jpg",
+        "height": 1224,
+        "fileid": "97c09319-d5b2-5607-a9aa-d652baff1bb1"
+      },
+      {
+        "original": "http://ci.xiaohongshu.com/9023c4ea-a61a-56d5-b0cd-aeb776418bca",
+        "width": 859,
+        "url": "http://ci.xiaohongshu.com/9023c4ea-a61a-56d5-b0cd-aeb776418bca?imageView2/2/w/1080/format/jpg",
+        "height": 1095,
+        "fileid": "9023c4ea-a61a-56d5-b0cd-aeb776418bca"
+      }
+    ],
+    "hash_tags": [],
+    "likes": 1555,
+    "ats": [],
+    "comments": 175,
+    "level": 2,
+    "share_info": {
+      "image": "http://ci.xiaohongshu.com/3fdf67bd-9273-5808-b6ba-27cd7304ce69?imageView2/2/w/360/format/jpg",
+      "link": "https://www.xiaohongshu.com/discovery/item/5ce3837c000000000f024d7c",
+      "title": "广州长隆水上乐园攻略 拍照圣地 无敌好玩",
+      "content": "· 520前夕跟姐妹们计划来了广州长隆水上乐园 开启暴走拍照玩水的一天～刚好赶上万人比基尼的活动，超多国内外小姐姐"
+    },
+    "geo_link": "",
+    "post_time": 1558414204,
+    "share_count": 606,
+    "share_link": "https://www.xiaohongshu.com/discovery/item/5ce3837c000000000f024d7c",
+    "inlikes": false,
+    "illegal_info": {},
+    "infavs": false,
+    "name": "广州长隆水上乐园攻略 拍照圣地 无敌好玩！！",
+    "tags_info_2": "[]",
+    "time": "2019-05-21 12:50",
+    "user": {
+      "red_club_level": 0,
+      "images": "https://img.xiaohongshu.com/avatar/5cb88687c2d0520001abe635.jpg@80w_80h_90q_1e_1c_1x.jpg",
+      "relationship_info": "",
+      "level": {
+        "image": "http://s4.xiaohongshu.com/static/throne/property/f4.png"
+      },
+      "red_official_verified": false,
+      "userid": "59dcc573de5fb44e79ee95c0",
+      "red_club": false,
+      "discoverys_total": 0,
+      "fstatus": "none",
+      "red_official_verify_show_icon": false,
+      "fans_total": 0,
+      "nickname": "Lucine🦌鹿醒",
+      "isbirthday": false
+    },
+    "desc": "·\n520前夕跟姐妹们计划来了广州长隆水上乐园 开启暴走拍照玩水的一天～刚好赶上万人比基尼的活动，超多国内外小姐姐👙（身材也是实名羡慕）\n现场还有表演活动➕电音节 嗨炸了！！💥\n·\n地址：#长隆水上乐园[地点]#（地铁汉溪长隆站）\n5月全网门统一票价：128元\n5月营业时间：09:00-21:00\n夜场营业时间：17:00-21:00\n水上摇滚电音秀：19:30-20:30\nPS：五月入住长隆酒店或长隆熊猫酒店，每预订一间房即可获赠两张水上乐园门票。\n·\n⚠️注意事项⚠️\n1⃣️入园后一定先去换泳衣，可以租储存柜（无限次使用）ps：在换衣服和储存柜门口都设有充电宝哦\n2⃣️需自带手机防水袋，泳衣拖鞋，女孩子最好带条浴巾，这些现场很贵。\n·\n✅必玩项目（可根据我的路线走哦）✅\n【超级造浪池】看到这么大玩水池 忍不住跳进去猛的拍照📷音乐放起 水枪喷起🔫没想到一大早就已经这么嗨！！建议都先来这 热热身✔️\n【摇滚巨轮】这绝对是我这辈子玩过最好玩的水上项目了‼️对未知的恐惧➕期待👻\n也是长隆水上乐园最热门的项目，图7回想起来真是满满的回忆，强烈推荐必玩这个‼️\n【漂流河历险】如果身体有点累了可以躺在浮圈上漂流 简直是种享受呐😌\n【桑拿屋】再热的天 进桑拿屋蒸一下再出来，绝对神清气爽还凉快💦，是来提神用的吧哈哈～\n【热水按摩池】水中按摩不要太舒服 玩累了可以去感受一下哦。\n【超级巨兽碗】图8 我们体重不够哈哈哈现场拉了个重量级小哥一起玩🙈，还是尖叫不断 失去重心的感觉太爽了！\n【水上电音Show】最后回到超级造浪池 晚上电音show开始咯，我们最期待的一个环节 跟着DJ和现场的气氛嗨起来，还有各种活动环节 比如亲亲环节，摄影给到镜头的情侣都必须亲亲😘超浪漫的呐\n·\nPS：我是早上的9点入场，中途吃了午饭晚饭 可根据自己的时间再安排就餐时间呢🤗\n一天过的又充实又好玩 到现在脑海里还充满超棒的回忆，这个夏天必须来广州长隆水上乐园🎡"
+  }
+}

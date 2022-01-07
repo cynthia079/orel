@@ -1,0 +1,56 @@
+﻿{
+  "Data": {
+    "Page": "2",
+    "CommentCount": "8",
+    "Title": "宝骏310自动挡配置曝光 预售5万元起",
+    "数字翻页": null,
+    "Comments": [
+      {
+        "LikedCount": "1",
+        "Content": "外观方面，XT5新车型将与现款XT5基本保持一致",
+        "Author": "韦石泉",
+        "CreateTime": "2017年 09月 16日 10时 45分",
+        "Replies": [
+          {
+            "Author": "Author1-1",
+            "Content": "Content1-1",
+            "Label": [
+              {
+                "Name": "CommentsRepliesLabelName1-1-1",
+                "Content": "CommentsRepliesLabelContent1-1-1"
+              },
+              {
+                "Name": "CommentsRepliesLabelName1-1-2",
+                "Content": "CommentsRepliesLabelContent1-1-2"
+              }
+            ]
+          },
+          {
+            "Author": "Author1-2",
+            "Content": "Content1-2",
+            "Label": [
+              {
+                "Name": "CommentsRepliesLabelName1-2-1",
+                "Content": "CommentsRepliesLabelContent1-2-1"
+              },
+              {
+                "Name": "CommentsRepliesLabelName1-2-2",
+                "Content": "CommentsRepliesLabelContent1-2-2"
+              }
+            ]
+          }
+        ],
+        "Label": [
+          {
+            "Name": "CommentsLabelName1-1",
+            "Content": "CommentsLabelContent1-1"
+          },
+          {
+            "Name": "CommentsLabelName1-2",
+            "Content": "CommentsLabelContent1-2"
+          }
+        ]
+      }
+    ]
+  }
+}

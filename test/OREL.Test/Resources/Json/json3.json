@@ -1,0 +1,168 @@
+﻿{
+  "PublishTime": "2017/9/18T19:26:06+08:00",
+  "Data": {
+    "Page": "2",
+    "CommentCount": "8",
+    "Title": "宝骏310自动挡配置曝光 预售5万元起",
+    "数字翻页": null,
+    "Comments": [
+      {
+        "LikedCount": "1",
+        "Content": "外观方面，XT5新车型将与现款XT5基本保持一致",
+        "Author": "韦石泉",
+        "CreateTime": "2017年 09月 16日 10时 45分",
+        "Replies": [
+          {
+            "Author": "Author1-1",
+            "Content": "Content1-1",
+            "Label": [
+              {
+                "Name": "CommentsRepliesLabelName1-1-1",
+                "Content": "CommentsRepliesLabelContent1-1-1"
+              },
+              {
+                "Name": "CommentsRepliesLabelName1-1-2",
+                "Content": "CommentsRepliesLabelContent1-1-2"
+              }
+            ]
+          },
+          {
+            "Author": "Author1-2",
+            "Content": "Content1-2",
+            "Label": [
+              {
+                "Name": "CommentsRepliesLabelName1-2-1",
+                "Content": "CommentsRepliesLabelContent1-2-1"
+              },
+              {
+                "Name": "CommentsRepliesLabelName1-2-2",
+                "Content": "CommentsRepliesLabelContent1-2-2"
+              }
+            ]
+          }
+        ],
+        "Label": [
+          {
+            "Name": "CommentsLabelName1-1",
+            "Content": "CommentsLabelContent1-1"
+          },
+          {
+            "Name": "CommentsLabelName1-2",
+            "Content": "CommentsLabelContent1-2"
+          }
+        ]
+      },
+      {
+        "LikedCount": "2",
+        "Content": "斯威7自动挡预售价发布 成都车展上市",
+        "Author": "全是石头路啊",
+        "CreateTime": "2017年 09月 16日 10时 19分",
+        "Replies": [
+          {
+            "Author": "Author2-1",
+            "Content": "Content2-1",
+            "Label": [
+              {
+                "Name": "CommentsRepliesLabelName2-1-1",
+                "Content": "CommentsRepliesLabelContent2-1-1"
+              },
+              {
+                "Name": "CommentsRepliesLabelName2-1-2",
+                "Content": "CommentsRepliesLabelContent2-1-2"
+              }
+            ]
+          },
+          {
+            "Author": "Author1-2",
+            "Content": "Content1-2",
+            "Label": [
+              {
+                "Name": "CommentsRepliesLabelName2-2-1",
+                "Content": "CommentsRepliesLabelContent2-2-1"
+              },
+              {
+                "Name": "CommentsRepliesLabelName2-2-2",
+                "Content": "CommentsRepliesLabelContent2-2-2"
+              }
+            ]
+          }
+        ],
+        "Label": [
+          {
+            "Name": "CommentsLabelName2-1",
+            "Content": "CommentsLabelContent2-1"
+          },
+          {
+            "Name": "CommentsLabelName2-2",
+            "Content": "CommentsLabelContent2-2"
+          }
+        ]
+      },
+      {
+        "LikedCount": "2",
+        "Content": "动力不足",
+        "Author": "宜之城",
+        "CreateTime": "2017年 09月 15日 20时 45分"
+      },
+      {
+        "LikedCount": "3",
+        "Content": "不是要让低端人群买得起车，最关键看车质量，你这车怎么也属于轿车，还没面包贵，。。。。。",
+        "Author": "矮了敷药",
+        "CreateTime": "2017年 09月 15日 20时 31分"
+      },
+      {
+        "LikedCount": "4",
+        "Content": "这个配置真的神级车了",
+        "Author": "铁甲依然宅",
+        "CreateTime": "2017年 09月 15日 13时 48分",
+        "Replies": [
+          {
+            "Author": "Author5-1",
+            "Content": "Content5-1",
+            "Label": [
+              {
+                "Name": "CommentsRepliesLabelName5-1-1",
+                "Content": "CommentsRepliesLabelContent5-1-1"
+              },
+              {
+                "Name": "CommentsRepliesLabelName5-1-2",
+                "Content": "CommentsRepliesLabelContent5-1-2"
+              }
+            ]
+          },
+          {
+            "Author": "Author5-2",
+            "Content": "Content5-2"
+          }
+        ],
+        "Label": [
+          {
+            "Name": "CommentsLabelName1-1",
+            "Content": "CommentsLabelContent1-1"
+          }
+        ]
+      },
+      {
+        "LikedCount": "4",
+        "Content": "下月哈弗就危险了",
+        "Author": "君悦海棠",
+        "CreateTime": "2017年 09月 15日 12时 07分"
+      },
+      {
+        "LikedCount": "4",
+        "Content": "牛",
+        "Author": "巴扎黑",
+        "CreateTime": "2017年 09月 15日 11时 31分"
+      },
+      {
+        "LikedCount": "4",
+        "Content": "宝骏神车",
+        "Author": "万小刚~项城市中医院消化科",
+        "CreateTime": "2017年 09月 15日 11时 22分"
+      }
+    ]
+  },
+  "array": [ 1, 2, 3, 4, 5 ],
+  "SchemaId": 34,
+  "RequestId": 12345
+}

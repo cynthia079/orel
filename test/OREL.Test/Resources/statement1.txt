@@ -1,0 +1,33 @@
+﻿{
+    response.body.data.id,
+    response.body.data.is_travel,
+    response.body.data.title,
+    create_time:response.body.data.ctime,
+    modify_time:response.body.data.mtime,
+    reply_count:response.body.data.reply,
+    vote_count:response.body.data.vote,
+    collect_count:response.body.data.collection,
+    view_count:response.body.data.pv,
+    travel_time: response.body.data.ex.sdate,
+    travel_who: response.body.data.ex.who,
+    travel_cost: response.body.data.ex.cost,
+    travel_days: response.body.data.ex.days,       
+    content:response.body.data.content=>
+    {
+        text:if(type='paragraph',
+            '<h2>'+ extr(text(content),'\"sn\":\s+\"(\S+)\",',1) + '</h2>',
+            if(type='container',
+                join(content.content,''),''
+                )
+            )
+    },	
+	user_id:response.body.data.user.uid,
+    user_name:response.body.data.user.name,
+    user_gender:response.body.data.user.gender,
+    user_city:response.body.data.user.city,
+    user_lv:response.body.data.user.user_lv,
+    user_fans_count:response.body.data.user.num_fans,
+    user_notes_count:response.body.data.user.num_notes,
+    user_score:response.body.data.user.user_score,    
+	types:response.body.data.content[type='paragraph']=>type+'_1'
+}
