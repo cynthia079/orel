@@ -1,7 +1,20 @@
 # OREL.Net
 An expresson language that can be used to transform and reshape .net object easily.  OREL is short for Object Reshape Expression Language.
 
-## Expression Syntax
+## Quick Start
+Suppose you have such data with a json format
+``` json
+```
+and want to transformed it to anthor formation
+``` json
+```
+
+you can do it by orel like this: 
+``` csharp
+```
+
+
+## Expression Syntax (editing...)
 ### Operand
 There are two types of operand in orel, Property and Constant
 
