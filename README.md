@@ -74,5 +74,5 @@ The constant value for operation
 
 > When the operation is applied to a list type, it will project a new list of which each item will be a object that has the specified property.
 
-> If the property name contains the reserved words of Orel such as +,-,.,like etc , you can use ` to wrap the property name to help Orel recognize the real propery name. 
+> If the property name contains the reserved words of Orel such as +,-,.,like etc , you can use \` to wrap the property name to help Orel recognize the real propery name. 
 example: \`Size[cm*cm]\`
