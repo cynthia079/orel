@@ -1,15 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<PackageId>OREL</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Cynthia079</Authors>
+		<RepositoryUrl>https://github.com/cynthia079/orel</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="OREL.cs~RF3462a5.TMP" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="OREL.cs~RF3462a5.TMP" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
 
 </Project>

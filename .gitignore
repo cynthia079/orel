@@ -7,3 +7,5 @@
 /test/OREL.Test/bin
 /src/bin/Debug/netcoreapp3.1
 /src/obj
+/nuget.config
+/src/bin
