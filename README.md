@@ -73,6 +73,7 @@ The constant value for operation
 
 ### Logical Operations
 > Logical operations must be applied to two expression of the boolean type
+
 | Operator | Function |
 | -- | -- |
 | And | Logical and |
