@@ -2,7 +2,7 @@
 An expresson language that can be used to transform and reshape .net object easily.  OREL is short for Object Reshape Expression Language.
 
 ## Quick Start
-Suppose we have such data with json format which retrived from remote api
+Suppose we have such data with json format which retrived from a remote api
 ``` json
 {
   "code": 0,
