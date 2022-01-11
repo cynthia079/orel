@@ -36,7 +36,7 @@ Suppose we have such data with json format which retrived from remote api
 
 We need retrieve each item from note_list array, convert them to appropriate format for storage or subsequent processing pipeline.
 
-|  column  | type | how to get |
+|  column  | type | how to set |
 | -- | -- | -- |
 | id | string | the id property |
 | title | string | the title property  |
@@ -44,18 +44,39 @@ We need retrieve each item from note_list array, convert them to appropriate for
 | firstImageUrl | string | the url of first image in image list  |
 | userId | string | id of user |
 | userName | string | name of user|
-| createTime | dateTime | date format of time |
-
-
-
-
+| gender | string | "male" or "female" |
+| createTime | dateTime | date format of time which is a unix timestamp |
+| viewCount | number | the number value of view_count |
+| topic | string | name property of json text "topics" |
+| tags | array | split text of desc by space and take from the second segment |
 
 you can do it by orel like this: 
 ``` csharp
+var obj = JsonConvert.DeserializeObject(json); //suppose json is the string variable that represents the raw json content
+
+var schema = SchemaProvider.FromObject(obj); //generate schema info from raw object, the schema is used to help orel to check if usage of property reference in expression is correct.
+
+ORELExecutable exe = OREL.Compile(@"data.note_list=>
+{
+    id,
+    title,
+    desc,
+    firstImageUrl: images_list[1].url,
+    userId: user.Id,
+    userName: user.Name,
+    gender: if(user.gender=1, 'female', 'male'),
+    createTime: date(time),
+    viewCount: num2(view_count),
+    topic: (j2o(topics)).name,
+    tags: split(desc,'  ')[2..]
+}", schema);   //use static Compile method to compile the expression to a ORELExecutable instance.
+
+var result = exe.Execute(obj); //call Execute method to do the conversion, result is a dynamic object that has the same schema with our target definition.
+var result2 = exe.Execute(obj2); //assume the obj2 is another raw data object. the Orel Expression need only be compiled once, and be executed multiple times.
 ```
 
 
-## Expression Syntax (editing...)
+## Expression Syntax (updating...)
 ### Operand
 There are two types of operand in orel, Property and Constant
 
