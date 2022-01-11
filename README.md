@@ -45,7 +45,7 @@ We need retrieve each item from note_list array, convert them to appropriate for
 | userId | string | id of user |
 | userName | string | name of user|
 | gender | string | "male" or "female" |
-| createTime | dateTime | date format of time which is a unix timestamp |
+| createTime | dateTime | ISO date format of time which is unix timestamp now |
 | viewCount | number | the number value of view_count |
 | topic | string | name property of json text "topics" |
 | tags | array | split text of desc by space and take from the second segment |
