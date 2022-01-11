@@ -52,8 +52,8 @@ We need retrieve each item from note_list array, convert them to appropriate for
 
 you can do it by orel like this: 
 ``` csharp
-//suppose json is the string variable that represents the raw json content
-var obj = JsonConvert.DeserializeObject(json); 
+//suppose jsonText is the string variable that represents the raw json content
+var obj = JsonConvert.DeserializeObject(jsonText); 
 
 //generate schema info from raw object, the schema is used to help orel to check if usage of property reference in expression is correct.
 var schema = SchemaProvider.FromObject(obj); 
