@@ -9,3 +9,4 @@
 /src/obj
 /nuget.config
 /src/bin
+/test/OREL.Test/OREL.Test.csproj.user

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
+using Newtonsoft.Json.Linq;
 using Orel.Expressions;
 using Orel.Schema;
 
@@ -73,7 +74,10 @@ namespace Orel
 
         public static bool IsList(this Type type)
         {
-            //return typeof(IEnumerable).IsAssignableFrom(type) && type != typeof(string);
+            if (type == typeof(JObject))
+            {
+                return false;
+            }
             return typeof(IList).IsAssignableFrom(type)
                 || (type.IsGenericType && typeof(IList<>).IsAssignableFrom(type.GetGenericTypeDefinition()));
         }

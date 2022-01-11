@@ -2612,6 +2612,35 @@ topicId:topics.topicId}", schema);
             Assert.AreEqual(8.5m, r[3]);
         }
 
+        [TestMethod]
+        public void TestXhs()
+        {
+            var json = File.ReadAllText("Resources\\Json\\json22.json");
+            var obj = JsonConvert.DeserializeObject(json);
+            var schema = SchemaProvider.FromObject(obj);
+            var exe = OREL.Compile(@"data.note_list=>
+{
+    id,
+    title,
+    desc,
+    firstImageUrl: images_list[1].url,
+    userId: user.Id,
+    userName: user.Name,
+    gender: if(user.gender=1, 'female', 'male'),
+    createTime: date(time),
+    viewCount: num2(view_count),
+    topic: j2o(topics).name,
+    tags: split(desc,'  ')[2..]
+}", schema);
+            var result = exe.Execute(obj);
+            var settings = new JsonSerializerSettings()
+            {
+                Converters = new List<JsonConverter>() { new ORELJsonWriter() },
+                Formatting = Formatting.Indented,
+            };
+            var json2 = JsonConvert.SerializeObject(result, settings);
+        }
+
         public class MixType
         {
             public string Name { get; set; }
