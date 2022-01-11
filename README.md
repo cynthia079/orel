@@ -2,12 +2,53 @@
 An expresson language that can be used to transform and reshape .net object easily.  OREL is short for Object Reshape Expression Language.
 
 ## Quick Start
-Suppose you have such data with a json format
+Suppose we have such data with json format which retrived from remote api
 ``` json
+{
+  "code": 0,
+  "success": true,
+  "data": [
+    {
+      "note_list": [
+        {
+          "id": "61614cd40000000001025937",
+          "title": "零食测评｜芝士就是力量🤗我猜你都没吃过",
+          "desc": "第二个真的是满满纯芝士[皱眉R]零食测评  可爱零食  零食推荐  芝士 ",
+          "images_list": [
+            {
+              "url": "http://sns-img-hw.somecdn.com/1b95e440-a3dd-3a55-8f68-789b08443541?imageView2/2/w/1080/format/webp"
+            }
+          ],
+          "user": {
+            "id": "5dcf533c000000000100729a",
+            "name": "白白美食屋",
+            "gender": 1
+          },
+          "time": 1633766612,
+          "view_count": "8k",
+          "topics": "{\"id\":\"59b75338e39faf37176829d9\",\"name\":\"零食测评\"}"
+        }
+      ]
+    }
+  ]
+}
 ```
-and want to transformed it to anthor formation
-``` json
-```
+
+We need retrieve each item from note_list array, convert them to appropriate format for storage or subsequent processing pipeline.
+
+|  column  | type | how to get |
+| -- | -- | -- |
+| id | string | the id property |
+| title | string | the title property  |
+| desc | string | the desc property  |
+| firstImageUrl | string | the url of first image in image list  |
+| userId | string | id of user |
+| userName | string | name of user|
+| createTime | dateTime | date format of time |
+
+
+
+
 
 you can do it by orel like this: 
 ``` csharp
