@@ -52,10 +52,13 @@ We need retrieve each item from note_list array, convert them to appropriate for
 
 you can do it by orel like this: 
 ``` csharp
-var obj = JsonConvert.DeserializeObject(json); //suppose json is the string variable that represents the raw json content
+//suppose json is the string variable that represents the raw json content
+var obj = JsonConvert.DeserializeObject(json); 
 
-var schema = SchemaProvider.FromObject(obj); //generate schema info from raw object, the schema is used to help orel to check if usage of property reference in expression is correct.
+//generate schema info from raw object, the schema is used to help orel to check if usage of property reference in expression is correct.
+var schema = SchemaProvider.FromObject(obj); 
 
+//use static Compile method to compile the expression to a ORELExecutable instance.
 ORELExecutable exe = OREL.Compile(@"data.note_list=>
 {
     id,
@@ -67,14 +70,49 @@ ORELExecutable exe = OREL.Compile(@"data.note_list=>
     gender: if(user.gender=1, 'female', 'male'),
     createTime: date(time),
     viewCount: num2(view_count),
-    topic: (j2o(topics)).name,
+    topic: j2o(topics).name,
     tags: split(desc,'  ')[2..]
-}", schema);   //use static Compile method to compile the expression to a ORELExecutable instance.
+}", schema);   
 
-var result = exe.Execute(obj); //call Execute method to do the conversion, result is a dynamic object that has the same schema with our target definition.
-var result2 = exe.Execute(obj2); //assume the obj2 is another raw data object. the Orel Expression need only be compiled once, and be executed multiple times.
+//call Execute method to do the conversion, result is a dynamic object that has the same schema with our target definition.
+var result = exe.Execute(obj); 
+
+//assume the obj2 is another raw data object. the Orel Expression need only be compiled once, and be executed multiple times.
+var result2 = exe.Execute(obj2); 
 ```
 
+Now we can convert final result to json format text
+``` csharp
+  //use ORELJsonWriter to serialize orel result object
+  var settings = new JsonSerializerSettings()
+            {
+                Converters = new List<JsonConverter>() { new ORELJsonWriter() },
+                Formatting = Formatting.Indented,
+            };
+  var resultJson = JsonConvert.SerializeObject(result, settings);
+```
+Here is the content of json text
+``` json
+[
+  {
+    "id": "61614cd40000000001025937",
+    "title": "零食测评｜芝士就是力量🤗我猜你都没吃过",
+    "desc": "第二个真的是满满纯芝士[皱眉R]零食测评  可爱零食  零食推荐  芝士 ",
+    "firstImageUrl": "http://sns-img-hw.xhscdn.com/1b95e440-a3dd-3a55-8f68-789b08443541?imageView2/2/w/1080/format/webp",
+    "userId": "5dcf533c000000000100729a",
+    "userName": "白白美食屋",
+    "gender": "female",
+    "createTime": "2021-10-09T16:03:32+08:00",
+    "viewCount": 8000,
+    "topic": "零食测评",
+    "tags": [
+      "可爱零食",
+      "零食推荐",
+      "芝士 "
+    ]
+  }
+]
+```
 
 ## Expression Syntax (updating...)
 ### Operand
