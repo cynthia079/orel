@@ -2,6 +2,8 @@
 An expresson language that can be used to transform and reshape .net object easily.  OREL is short for Object Reshape Expression Language.
 
 ## Quick Start
+
+### Scenario 1
 Suppose we have such data with json format which retrived from a remote api
 ``` json
 {
@@ -110,6 +112,84 @@ Here is the content of json text
       "零食推荐",
       "芝士 "
     ]
+  }
+]
+```
+
+### Scenario 2
+Suppose we hava such data which represents some comments from user
+
+``` json
+{
+  "Comments": [
+    {
+      "LikedCount": "10",
+      "Content": "外观方面，XT5新车型将与现款XT5基本保持一致",
+      "Author": "韦石泉",
+      "CreateTime": "2017年 09月 16日 10时 45分"
+    },
+    {
+      "LikedCount": "20",
+      "Content": "斯威7自动挡预售价发布 成都车展上市",
+      "Author": "全是石头路啊",
+      "CreateTime": "2017年 09月 16日 00时 00分"
+    },
+    {
+      "LikedCount": "22",
+      "Content": "动力不足",
+      "Author": "宜之城",
+      "CreateTime": "2017年 09月 15日 20时 45分"
+    },
+    {
+      "LikedCount": "31",
+      "Content": "不是要让低端人群买得起车，最关键看车质量，你这车怎么也属于轿车，还没面包贵，。。。。。",
+      "Author": "矮了敷药",
+      "CreateTime": "2017年 09月 15日 20时 30分"
+    },
+    {
+      "LikedCount": "42",
+      "Content": "这个配置真的神级车了",
+      "Author": "铁甲依然宅",
+      "CreateTime": "2017年 09月 14日 13时 48分"
+    }
+  ]
+}
+```
+
+We want to choose the comments which published from 2017-9-15 20:30 (include) to 2017-9-16 (exclude), and LikedCount must exceed 20.
+Then we can do it like this:
+
+``` csharp
+//create the schema manually
+var schema = new MemberDefinition[] {
+                new MemberDefinition("Comments",  DataType.List),
+                new MemberDefinition("LikedCount",  DataType.Number, "Comments"),
+                new MemberDefinition("CreateTime",  DataType.DateTime, "Comments"),
+            };
+
+//compile the expression of filtering
+var exe = OREL.Compile("Comments[LikedCount > 20 and CreateTime between ['2017-9-15 20:30:00','2017-9-16')]", schema);
+
+//run it
+var result = exe.Execute(obj);
+
+```
+
+Here is the json of result
+
+``` json
+[
+  {
+    "LikedCount": "22",
+    "Content": "动力不足",
+    "Author": "宜之城",
+    "CreateTime": "2017年 09月 15日 20时 45分"
+  },
+  {
+    "LikedCount": "31",
+    "Content": "不是要让低端人群买得起车，最关键看车质量，你这车怎么也属于轿车，还没面包贵，。。。。。",
+    "Author": "矮了敷药",
+    "CreateTime": "2017年 09月 15日 20时 30分"
   }
 ]
 ```
