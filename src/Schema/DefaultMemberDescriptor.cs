@@ -21,7 +21,7 @@ namespace Orel.Schema
         /// <param name="defaultScope">表示该Scope下面的所有节点可以作为顶级节点看待
         /// 访问该Scope下的所有子节点时可以省略[Scope.]的对象访问符前缀，
         /// 如果该Scope下有和根节点重名的节点，则仍需要使用对象访问符前缀</param>
-        public DefaultMemberDescriptor(string defaultScope = "Data", Func<MemberDefinition, MemberDefinition, string> actualNameGetter = null)
+        public DefaultMemberDescriptor(string defaultScope = null, Func<MemberDefinition, MemberDefinition, string> actualNameGetter = null)
         {
             DefaultScope = defaultScope;
             if (!string.IsNullOrEmpty(defaultScope))
@@ -38,7 +38,7 @@ namespace Orel.Schema
         /// <param name="defaultScope">表示该Scope下面的所有节点可以作为顶级节点看待
         /// 访问该Scope下的所有子节点时可以省略[Scope.]的对象访问符前缀，
         /// 如果该Scope下有和根节点重名的节点，则仍需要使用对象访问符前缀</param>
-        public DefaultMemberDescriptor(IEnumerable<MemberDefinition> memberDefinitions, string defaultScope = "Data", Func<MemberDefinition, MemberDefinition, string> actualNameSetter = null) : this(defaultScope, actualNameSetter)
+        public DefaultMemberDescriptor(IEnumerable<MemberDefinition> memberDefinitions, string defaultScope = null, Func<MemberDefinition, MemberDefinition, string> actualNameSetter = null) : this(defaultScope, actualNameSetter)
         {
             SetMembers(memberDefinitions);
         }

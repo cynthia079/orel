@@ -15,7 +15,7 @@ namespace Orel
         /// <param name="statement"></param>
         /// <param name="members"></param>
         /// <returns></returns>
-        public static ORELExecutable Compile(string statement, IEnumerable<MemberDefinition> members, IEnumerable<ParameterDefinition> parameters = null, string defaultScope = "Data")
+        public static ORELExecutable Compile(string statement, IEnumerable<MemberDefinition> members, IEnumerable<ParameterDefinition> parameters = null, string defaultScope = null)
         {
             var memberDescriptor = new DefaultMemberDescriptor(members, defaultScope);
             return Compile(statement, memberDescriptor, parameters);

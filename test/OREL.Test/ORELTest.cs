@@ -35,11 +35,11 @@ and ABC between [1,2*(2+3))";
 
             exe = OREL.Compile("now(12)");
             result = exe.Execute();
-            Assert.AreEqual(DateTime.UtcNow.Hour + 12, ((DateTimeOffset)result).Hour);
+            Assert.AreEqual(DateTime.UtcNow.AddHours(12).Hour, ((DateTimeOffset)result).Hour);
 
             exe = OREL.Compile("now()");
             result = exe.Execute();
-            Assert.AreEqual(DateTime.UtcNow.Hour + 8, ((DateTimeOffset)result).Hour);
+            Assert.AreEqual(DateTime.UtcNow.AddHours(8).Hour, ((DateTimeOffset)result).Hour);
 
             exe = OREL.Compile("date('2018-08-27 12:00:00')");
             result = exe.Execute();
@@ -422,19 +422,19 @@ and ABC between [1,2*(2+3))";
                  new MemberDefinition("Time", DataType.DateTime,"Data" ),
                  new MemberDefinition("CommentCount", DataType.Number,"Data" ),
             };
-
+            var schema = new DefaultMemberDescriptor(members, "Data");
             ORELExecutable exe;
             object result;
 
-            exe = OREL.Compile("Page between [1,8)", members);
+            exe = OREL.Compile("Page between [1,8)", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("2 between (2,8]", members);
+            exe = OREL.Compile("2 between (2,8]", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(false, result);
 
-            exe = OREL.Compile("Time between('2017-1-1','2018-1-1') and CommentCount between[1,10]", members);
+            exe = OREL.Compile("Time between('2017-1-1','2018-1-1') and CommentCount between[1,10]", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
         }
@@ -446,12 +446,12 @@ and ABC between [1,2*(2+3))";
             MemberDefinition[] members = new[]
             {
                  new MemberDefinition("Data", DataType.Object ),
-                 new MemberDefinition("Page", DataType.Number ),
+                 new MemberDefinition("Page", DataType.Number , "Data"),
                  new MemberDefinition("CommentCount", DataType.Number, "Data" ),
                  new MemberDefinition("Time", DataType.DateTime, "Data" ),
                  new MemberDefinition("Comments",  DataType.List, "Data")
             };
-
+            var schema = new DefaultMemberDescriptor(members, "Data");
             ORELExecutable exe;
             object result;
 
@@ -467,19 +467,19 @@ and ABC between [1,2*(2+3))";
             result = exe.Execute();
             Assert.AreEqual(false, result);
 
-            exe = OREL.Compile("!Time between('2017-1-1','2018-1-1') and CommentCount between[1,10]", members);
+            exe = OREL.Compile("!Time between('2017-1-1','2018-1-1') and CommentCount between[1,10]", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(false, result);
 
-            exe = OREL.Compile("Time between('2017-1-1','2018-1-1') and !CommentCount between[11,12]", members);
+            exe = OREL.Compile("Time between('2017-1-1','2018-1-1') and !CommentCount between[11,12]", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("4+1=5 and (1+4*2=9 and !(6=0 or 9*(8+1)=81)) and 1=1", members);
+            exe = OREL.Compile("4+1=5 and (1+4*2=9 and !(6=0 or 9*(8+1)=81)) and 1=1", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(false, result);
 
-            exe = OREL.Compile("4+1=5 and (1+4*2=9 and (!6=0 or 9*(8+1)=81)) and 1=1", members);
+            exe = OREL.Compile("4+1=5 and (1+4*2=9 and (!6=0 or 9*(8+1)=81)) and 1=1", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
         }
@@ -490,7 +490,6 @@ and ABC between [1,2*(2+3))";
             dynamic obj = JsonConvert.DeserializeObject<dynamic>(File.ReadAllText("Resources\\Json\\json1.json"));
             MemberDefinition[] members = new[]
             {
-                
                  new MemberDefinition("Data", DataType.Object ),
                  new MemberDefinition("Title", DataType.Text, "Data" ),
                  new MemberDefinition("Page", DataType.Number, "Data" ),
@@ -500,16 +499,15 @@ and ABC between [1,2*(2+3))";
                  new MemberDefinition("ClientType",  DataType.Number),
                  new MemberDefinition("ClientType1",  DataType.Number),
                  new MemberDefinition("自定义",  DataType.Number, "Data"),
-                 new MemberDefinition("数字翻页",  DataType.Number, "Data"),
             };
-
+            var schema = new DefaultMemberDescriptor(members, "Data");
             ORELExecutable exe;
             object result;
 
             //属性不存在于预定义字段中
             try
             {
-                exe = OREL.Compile("Page1 between [1,8)", members);
+                exe = OREL.Compile("Page1 between [1,8)", schema);
                 result = exe.Execute(obj);
                 Assert.AreEqual(true, result);
             }
@@ -519,68 +517,64 @@ and ABC between [1,2*(2+3))";
             }
 
             //属性的值为null
-            exe = OREL.Compile("ClientType = null", members);
-            result = exe.Execute(obj);
-            Assert.AreEqual(true, result);
-
-            exe = OREL.Compile("数字翻页 = null", members);
+            exe = OREL.Compile("ClientType = null", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
             //存在于预定义字段，但是不存在于数据中
-            exe = OREL.Compile("ClientType1 = null", members);
+            exe = OREL.Compile("ClientType1 = null", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("自定义 = null", members);
+            exe = OREL.Compile("自定义 = null", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("Title like '宝骏310%' ", members);
+            exe = OREL.Compile("Title like '宝骏310%' ", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("Data.Page", members);
+            exe = OREL.Compile("Data.Page", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(2m, result);
 
-            exe = OREL.Compile("CommentCount > 7", members);
+            exe = OREL.Compile("CommentCount > 7", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("CommentCount = '8'", members);   //非文本类型数据和文本关联操作时，视作文本类型
+            exe = OREL.Compile("CommentCount = '8'", schema);   //非文本类型数据和文本关联操作时，视作文本类型
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("CommentCount+1", members);
+            exe = OREL.Compile("CommentCount+1", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(9m, result);
 
-            exe = OREL.Compile("CommentCount>Page", members);
+            exe = OREL.Compile("CommentCount>Page", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("CommentCount+'1'", members);  //非文本类型数据和文本关联操作时，视作文本类型
+            exe = OREL.Compile("CommentCount+'1'", schema);  //非文本类型数据和文本关联操作时，视作文本类型
             result = exe.Execute(obj);
             Assert.AreEqual("81", result);
 
-            exe = OREL.Compile("date_part(Time,'y') = 2017", members);  //日期类型隐式转换
+            exe = OREL.Compile("date_part(Time,'y') = 2017", schema);  //日期类型隐式转换
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("Time >= '2017-9-18' and Time < '2017-9-19' ", members);  //日期类型隐式转换
+            exe = OREL.Compile("Time >= '2017-9-18' and Time < '2017-9-19' ", schema);  //日期类型隐式转换
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("date_fmt(Time+'1d2h','yyyyMMddHHmmss') = '20170919140000'", members);  //日期类型隐式转换
+            exe = OREL.Compile("date_fmt(Time+'1d2h','yyyyMMddHHmmss') = '20170919140000'", schema);  //日期类型隐式转换
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("date('2018-01-01') + '1d' = '2018-1-2'", members);
+            exe = OREL.Compile("date('2018-01-01') + '1d' = '2018-1-2'", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
 
-            exe = OREL.Compile("date('2018-01-01') - '1d' = '2017-12-31'", members);
+            exe = OREL.Compile("date('2018-01-01') - '1d' = '2017-12-31'", schema);
             result = exe.Execute(obj);
             Assert.AreEqual(true, result);
         }
@@ -731,7 +725,7 @@ and ABC between [1,2*(2+3))";
                  new MemberDefinition("Content",  DataType.Text, "Data.Comments"),
                  new MemberDefinition("Author",  DataType.Text, "Data.Comments")
             };
-            var descriptor = new DefaultMemberDescriptor(members);
+            var descriptor = new DefaultMemberDescriptor(members, "Data");
 
             var settings = new JsonSerializerSettings()
             {
@@ -792,29 +786,30 @@ and ABC between [1,2*(2+3))";
             desc.Add(new MemberDefinition("Label", DataType.List, "Data.Comments"));
             desc.Add(new MemberDefinition("Name", DataType.Text, "Data.Comments.Label"));
             desc.Add(new MemberDefinition("Content", DataType.Text, "Data.Comments.Label"));
-
+            
+            var schema = new DefaultMemberDescriptor(desc, "Data");
             var txt = File.ReadAllText("Resources\\Json\\json3.json");
 
             ORELExecutable exe;
             object result;
 
-            exe = OREL.Compile("Comments", desc);
+            exe = OREL.Compile("Comments", schema);
             result = exe.ExecuteJson(txt);
             Assert.AreEqual(8, (result as IList).Count);
 
-            exe = OREL.Compile("Comments.LikedCount", desc);
+            exe = OREL.Compile("Comments.LikedCount", schema);
             result = exe.ExecuteJson(txt);
             Assert.AreEqual(8, (result as IList).Count);
 
-            exe = OREL.Compile("Comments.Replies", desc);
+            exe = OREL.Compile("Comments.Replies", schema);
             result = exe.ExecuteJson(txt);
             Assert.AreEqual(6, (result as IList).Count);
 
-            exe = OREL.Compile("Comments.Replies.Label", desc);
+            exe = OREL.Compile("Comments.Replies.Label", schema);
             result = exe.ExecuteJson(txt);
             Assert.AreEqual(10, (result as IList).Count);
 
-            exe = OREL.Compile("Comments.Label", desc);
+            exe = OREL.Compile("Comments.Label", schema);
             result = exe.ExecuteJson(txt);
             Assert.AreEqual(5, (result as IList).Count);
         }
@@ -2674,12 +2669,12 @@ topicId:topics.topicId}", schema);
         /// 构建Json3.json对应数据的MemberDescriptor；
         /// </summary>
         /// <returns></returns>
-        private static IEnumerable<MemberDefinition> GetDescriptor3()
+        private static ISchemaProvider GetDescriptor3()
         {
             var desc = new List<MemberDefinition>();
             desc.Add(new MemberDefinition("SchemaId", DataType.Number));
             desc.Add(new MemberDefinition("PublishTime", DataType.DateTime));
-            desc.Add(new MemberDefinition("Data", DataType.Object));
+            //desc.Add(new MemberDefinition("Data", DataType.Object));
             desc.Add(new MemberDefinition("Page", DataType.Number, "Data"));
             desc.Add(new MemberDefinition("Title", DataType.Text, "Data"));
             desc.Add(new MemberDefinition("CommentCount", DataType.Number, "Data"));
@@ -2697,7 +2692,7 @@ topicId:topics.topicId}", schema);
             desc.Add(new MemberDefinition("Label", DataType.List, "Data.Comments"));
             desc.Add(new MemberDefinition("Name", DataType.Text, "Data.Comments.Label"));
             desc.Add(new MemberDefinition("Content", DataType.Text, "Data.Comments.Label"));
-            return desc;
+            return new DefaultMemberDescriptor(desc, "Data");
         }
 
         private Delegate CompileQuery(string startement)
