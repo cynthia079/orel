@@ -4,7 +4,7 @@ An expresson language that can be used to transform and reshape .net object easi
 ## Quick Start
 
 ### Scenario 1
-Suppose we have such data with json format which retrived from a remote api
+Suppose we have such data with json format which fetched from a remote api
 ``` json
 {
   "code": 0,
@@ -36,7 +36,7 @@ Suppose we have such data with json format which retrived from a remote api
 }
 ```
 
-We need iterate each item from note_list array, convert them to appropriate format for storage or upcoming data processing.
+We need iterate each item from note_list array, convert them to appropriate format for storage or downstream data processing.
 
 |  column  | type | how to set |
 | -- | -- | -- |
@@ -54,10 +54,10 @@ We need iterate each item from note_list array, convert them to appropriate form
 
 you can do it by orel like this: 
 ``` csharp
-//suppose variable jsonText represents the raw json content
+//suppose jsonText represents the raw json content
 var obj = JsonConvert.DeserializeObject(jsonText); 
 
-//generate schema info from raw object, the schema is used to help orel to check if usage of property reference in expression is correct.
+//generate schema info from raw object, the schema is used to help orel to check the usage of property reference in expression is correct.
 var schema = SchemaProvider.FromObject(obj); 
 
 //use static Compile method to compile the expression to a ORELExecutable instance.
@@ -83,7 +83,7 @@ var result = exe.Execute(obj);
 var result2 = exe.Execute(obj2); 
 ```
 
-Then we can convert final result to a json format text.
+Then we try to convert the final result to json text
 ``` csharp
   //use ORELJsonWriter to serialize orel result object
   var settings = new JsonSerializerSettings()
@@ -93,7 +93,7 @@ Then we can convert final result to a json format text.
             };
   var resultJson = JsonConvert.SerializeObject(result, settings);
 ```
-Here is the content of convertion result.
+Here is the content of conversion result
 ``` json
 [
   {
@@ -156,11 +156,11 @@ Suppose we hava such data which represents some comments from user
 }
 ```
 
-We want to choose the comments which published from 2017-9-15 20:30 (include) to 2017-9-16 00:00 (exclude), and LikedCount must exceed 20.
-Then we can do it like this:
+We want to pick up the comments that published from 2017-9-15 20:30 (include) to 2017-9-16 00:00 (exclude), and LikedCount must exceed 20.
+We can do it like this:
 
 ``` csharp
-//here we create the schema manually, rather than generate automatically
+//this time we create the schema manually
 var schema = new MemberDefinition[] {
                 new MemberDefinition("Comments",  DataType.List),
                 new MemberDefinition("LikedCount",  DataType.Number, "Comments"),
@@ -175,7 +175,7 @@ var result = exe.Execute(obj);
 
 ```
 
-Here is the json result
+Here is the json of result
 
 ``` json
 [
