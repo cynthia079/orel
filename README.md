@@ -36,7 +36,7 @@ Suppose we have such data with json format which retrived from a remote api
 }
 ```
 
-We need iterate each item from note_list array, convert them to appropriate format for storage or downstream data processing.
+We need iterate each item from note_list array, convert them to appropriate format for storage or upcoming data processing.
 
 |  column  | type | how to set |
 | -- | -- | -- |
@@ -83,7 +83,7 @@ var result = exe.Execute(obj);
 var result2 = exe.Execute(obj2); 
 ```
 
-Now we can convert final result to json format text
+Then we can convert final result to a json format text.
 ``` csharp
   //use ORELJsonWriter to serialize orel result object
   var settings = new JsonSerializerSettings()
@@ -93,7 +93,7 @@ Now we can convert final result to json format text
             };
   var resultJson = JsonConvert.SerializeObject(result, settings);
 ```
-Here is the content of json text
+Here is the content of convertion result.
 ``` json
 [
   {
@@ -156,11 +156,11 @@ Suppose we hava such data which represents some comments from user
 }
 ```
 
-We want to choose the comments which published from 2017-9-15 20:30 (include) to 2017-9-16 (exclude), and LikedCount must exceed 20.
+We want to choose the comments which published from 2017-9-15 20:30 (include) to 2017-9-16 00:00 (exclude), and LikedCount must exceed 20.
 Then we can do it like this:
 
 ``` csharp
-//create the schema manually
+//here we create the schema manually, rather than generate automatically
 var schema = new MemberDefinition[] {
                 new MemberDefinition("Comments",  DataType.List),
                 new MemberDefinition("LikedCount",  DataType.Number, "Comments"),
@@ -175,7 +175,7 @@ var result = exe.Execute(obj);
 
 ```
 
-Here is the json of result
+Here is the json result
 
 ``` json
 [
