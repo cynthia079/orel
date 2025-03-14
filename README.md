@@ -15,10 +15,10 @@ Suppose we have such data with json format which fetched from a remote api
         {
           "id": "61614cd40000000001025937",
           "title": "零食测评｜芝士就是力量🤗我猜你都没吃过",
-          "desc": "第二个真的是满满纯芝士[皱眉R]零食测评  可爱零食  零食推荐  芝士 ",
+          "desc": "第二个真的是满满纯芝士[皱眉R]零食测评",
           "images_list": [
             {
-              "url": "http://sns-img-hw.somecdn.com/1b95e440-a3dd-3a55-8f68-789b08443541?imageView2/2/w/1080/format/webp"
+              "url": "http:/xxx.somecdn.com"
             }
           ],
           "user": {
@@ -99,8 +99,8 @@ Here is the content of conversion result
   {
     "id": "61614cd40000000001025937",
     "title": "零食测评｜芝士就是力量🤗我猜你都没吃过",
-    "desc": "第二个真的是满满纯芝士[皱眉R]零食测评  可爱零食  零食推荐  芝士 ",
-    "firstImageUrl": "http://sns-img-hw.xhscdn.com/1b95e440-a3dd-3a55-8f68-789b08443541?imageView2/2/w/1080/format/webp",
+    "desc": "第二个真的是满满纯芝士[皱眉R]零食测评",
+    "firstImageUrl": "http://xxx.somecdn.com",
     "userId": "5dcf533c000000000100729a",
     "userName": "白白美食屋",
     "gender": "female",
